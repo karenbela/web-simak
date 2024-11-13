@@ -1,0 +1,128 @@
+/* Reset dasar untuk menghilangkan margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef; /* Warna latar belakang */
+    color: #333; /* Warna teks */
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Container untuk halaman login */
+.container {
+    width: 300px; /* Lebar kontainer */
+    margin: 100px auto; /* Margin atas dan bawah 100px, tengah secara horizontal */
+    padding: 20px; /* Padding di dalam kontainer */
+    background: white; /* Warna latar belakang kontainer */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border-radius: 8px; /* Sudut melengkung */
+    text-align: center; /* Teks di tengah */
+}
+
+/* Judul halaman */
+h1 {
+    margin-bottom: 20px; /* Margin bawah untuk judul */
+}
+
+/* Animasi marquee */
+.marquee {
+    white-space: nowrap; /* Mencegah teks terputus */
+    overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+    animation: marquee 10s linear infinite; /* Animasi marquee */
+    font-weight: bold; /* Teks tebal */
+    color: #007bff; /* Warna teks */
+}
+
+/* Efek marquee */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Opsi login */
+.login-options {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: space-between; /* Menyebar tombol secara horizontal */
+    margin-bottom: 20px; /* Margin bawah */
+}
+
+.login-options button {
+    flex: 1; /* Tombol mengambil ruang yang sama */
+    margin: 0 5px; /* Margin kiri dan kanan */
+    padding: 10px; /* Padding di dalam tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s; /* Transisi warna latar belakang */
+}
+
+.login-options button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+
+/* Form login */
+.login-form {
+    display: none; /* Form login disembunyikan secara default */
+    transform: translateY(20px); /* Posisi awal untuk animasi */
+    opacity: 0; /* Transparansi awal */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transisi untuk animasi */
+}
+
+.login-form.active {
+    display: block; /* Tampilkan form login ketika aktif */
+    opacity: 1; /* Set transparansi menjadi 1 */
+    transform: translateY(0); /* Kembalikan posisi ke normal */
+}
+
+.login-form input {
+    width: 100%; /* Lebar input 100% */
+    padding: 10px; /* Padding di dalam input */
+    margin: 5px 0; /* Margin atas dan bawah */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 5px; /* Sudut melengkung */
+}
+
+.login-form a {
+    display: block; /* Menampilkan link sebagai blok */
+    margin: 10px 0; /* Margin atas dan bawah */
+    color: #007bff; /* Warna link */
+    text-decoration: none; /* Tanpa garis bawah */
+}
+
+.login-form a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.login-form button {
+    background-color: #007bff; /* Warna latar belakang tombol login */
+    color: white; /* Warna teks tombol login */
+    padding: 10px; /* Padding di dalam tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s; /* Transisi warna latar belakang */
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Warna saat hover tombol login */
+}
+
+/* Pesan kesalahan */
+.error-message {
+    color: red; /* Warna teks untuk pesan kesalahan */
+    margin-top: 10px; /* Margin atas untuk pemisahan */
+    display: none; /* Sembunyikan pesan kesalahan secara default */
+}
+
+/* Pesan sukses */
+.success-message {
+    color: green; /* Warna teks untuk pesan sukses */
+    margin-top: 10px; /* Margin atas untuk pemisahan */
+    display: none; /* Sembunyikan pesan sukses secara default */
+}

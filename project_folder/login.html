@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Login - Sistem Manajemen Jadwal Konsultasi Dosen (SIMAK) Universitas Klabat</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Sistem Manajemen Jadwal Konsultasi Dosen</h1>
+        <div class="marquee">Silakan pilih untuk login sebagai Dosen atau Mahasiswa.</div>
+        
+        <div class="login-options">
+            <button id="btnDosen" onclick="showLecturerLogin()">Dosen</button>
+            <button id="btnMahasiswa" onclick="showStudentLogin()">Mahasiswa</button>
+        </div>
+
+        <div id="login-form" class="login-form" style="display: none;">
+            <h2 id="formTitle">Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <a href="ganti-password.html">Ganti Password</a>
+            <button type="button" id="loginButton" onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        // Variabel global untuk menyimpan peran yang dipilih
+        let role = ''; 
+
+        // Fungsi untuk menampilkan login mahasiswa
+        function showStudentLogin() {
+            role = 'mahasiswa'; // Set peran ke mahasiswa
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('formTitle').innerText = 'Login Mahasiswa';
+            document.getElementById('username').placeholder = 'No. Registrasi (S22123456)';
+            document.getElementById('username').value = '';
+            animateLoginForm();
+        }
+
+        // Fungsi untuk menampilkan login dosen
+        function showLecturerLogin() {
+            role = 'dosen'; // Set peran ke dosen
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('formTitle').innerText = 'Login Dosen';
+            document.getElementById('username').placeholder = 'Email Address';
+            document.getElementById('username').value = '';
+            animateLoginForm();
+        }
+
+        // Fungsi untuk login
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validasi login sederhana berdasarkan role yang dipilih
+            if (username && password) {
+                // Langsung arahkan ke halaman sesuai peran tanpa memeriksa username dan password
+                if (role === 'dosen') {
+                    alert(`Login sebagai dosen berhasil!`);
+                    window.location.href = 'home_dosen.html';
+                } else if (role === 'mahasiswa') {
+                    alert(`Login sebagai mahasiswa berhasil!`);
+                    window.location.href = 'home_mahasiswa.html';
+                }
+            } else {
+                alert('Silakan isi username dan password.');
+            }
+        }
+
+        // Fungsi untuk animasi form login
+        function animateLoginForm() {
+            const form = document.getElementById('login-form');
+            form.style.transform = 'translateY(0)';
+            form.style.opacity = '1';
+        }
+
+        // Animasi untuk kotak login
+        window.onload = function() {
+            const container = document.querySelector('.container');
+            container.style.transform = 'translateY(0)';
+            container.style.opacity = '1';
+        };
+    </script>
+</body>
+</html>

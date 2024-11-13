@@ -1,0 +1,262 @@
+/* Reset dasar untuk menghilangkan margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Gradient background yang lembut */
+    color: #333; /* Warna teks */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Tinggi minimal viewport */
+}
+
+/* Header */
+header {
+    background-color: #ffffff; /* Warna latar belakang header */
+    color: #333; /* Warna teks header */
+    padding: 20px 0; /* Padding atas dan bawah */
+    text-align: center; /* Teks di tengah */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    position: sticky; /* Tetap di atas saat scroll */
+    top: 0; /* Posisi atas */
+    z-index: 1000; /* Di atas konten lainnya */
+}
+
+header h1 {
+    font-size: 2.5em; /* Ukuran font judul */
+    color: #007bff; /* Warna judul */
+}
+
+header button {
+    float: right; /* Tombol di sebelah kanan */
+    background-color: #dc3545; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Tanpa border */
+    padding: 10px 20px; /* Padding di dalam tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s; /* Transisi warna latar belakang */
+}
+
+header button:hover {
+    background-color: #c82333; /* Warna saat hover */
+}
+
+/* Teks berjalan */
+.marquee {
+    white-space: nowrap; /* Mencegah teks terputus */
+    overflow: hidden; /* Menghindari overflow */
+    box-sizing: border-box; /* Menghitung padding dan border dalam lebar */
+    position: relative; /* Untuk efek */
+    z-index: 2; /* Di atas overlay */
+    background-color: #f8f9fa; /* Latar belakang teks berjalan */
+    padding: 10px; /* Padding di dalam marquee */
+    font-weight: bold; /* Teks tebal */
+}
+
+.marquee p {
+    display: inline-block; /* Menampilkan teks dalam baris */
+    animation: marquee 10s linear infinite; /* Animasi teks berjalan */
+    font-size: 1.2em; /* Ukuran font teks berjalan */
+    color: #ffdd57; /* Warna teks berjalan */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Mulai dari kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Berhenti di kiri */
+    }
+}
+
+/* Bagian Fitur */
+.features {
+    padding: 50px 20px; /* Padding atas dan bawah */
+    text-align: center; /* Teks di tengah */
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih semi-transparan */
+}
+
+.features h2 {
+    margin-bottom: 30px; /* Margin bawah */
+    font-size: 2.5em; /* Ukuran font judul */
+    color: #007bff; /* Warna judul */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Bayangan teks */
+}
+
+.feature {
+    background-color: #ffffff; /* Warna latar belakang fitur */
+    border-radius: 10px; /* Sudut melengkung */
+    padding: 40px; /* Padding di dalam fitur */
+    margin: 20px; /* Margin untuk jarak antar fitur */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
+    display: inline-block; /* Menampilkan fitur dalam baris */
+    width: calc(33% - 40px); /* Lebar fitur proporsional */
+    cursor : pointer; /* Kursor tangan saat hover */
+}
+
+.feature:hover {
+    transform: translateY(-5px); /* Efek angkat saat hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
+}
+
+.feature-icon {
+    font-size: 3em; /* Ukuran ikon fitur */
+    color: #007bff; /* Warna ikon */
+    margin-bottom: 15px; /* Margin bawah */
+}
+
+.feature h3 {
+    font-size: 1.8em; /* Ukuran font judul fitur */
+    margin-bottom: 10px; /* Margin bawah */
+    color: #333; /* Warna teks judul fitur */
+}
+
+.feature p {
+    font-size: 1em; /* Ukuran font deskripsi fitur */
+    color: #666; /* Warna teks deskripsi fitur */
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff; /* Warna latar belakang footer */
+    color: #333; /* Warna teks footer */
+    text-align: center; /* Teks di tengah */
+    padding: 20px 0; /* Padding atas dan bawah */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+/* Media Queries untuk responsivitas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Ukuran font judul lebih kecil di perangkat mobile */
+    }
+
+    .features h2 {
+        font-size: 2em; /* Ukuran font judul fitur lebih kecil di perangkat mobile */
+    }
+
+    .feature {
+        width: calc(100% - 40px); /* Lebar fitur penuh di perangkat mobile */
+        margin: 10px 0; /* Margin lebih kecil di perangkat mobile */
+    }
+
+    header button {
+        font-size: 0.9em; /* Ukuran font tombol lebih kecil di perangkat mobile */
+    }
+}
+
+/* Animasi untuk elemen saat scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature {
+    animation: fadeIn 0.5s ease forwards; /* Animasi saat fitur muncul */
+}
+
+/* Efek transisi untuk tombol */
+button {
+    transition: all 0.3s ease; /* Transisi untuk semua properti */
+}
+
+button:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+}
+
+/* Gaya untuk link */
+a {
+    color: #007bff; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    transition: color 0.3s; /* Transisi warna */
+}
+
+a:hover {
+    color: #0056b3; /* Warna saat hover */
+}
+
+/* Gaya untuk daftar */
+ul {
+    list-style-type: none; /* Menghilangkan bullet */
+    padding: 0; /* Menghilangkan padding */
+}
+
+li {
+    margin: 10px 0; /* Margin untuk jarak antar item */
+}
+
+/* Gaya untuk tabel */
+table {
+    width: 100%; /* Lebar penuh */
+    border-collapse: collapse; /* Menghilangkan jarak antar border */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Border untuk sel */
+    padding: 10px; /* Padding di dalam sel */
+    text-align: left; /* Teks rata kiri */
+}
+
+th {
+    background-color: #007bff; /* Warna latar belakang header tabel */
+    color: white; /* Warna teks header tabel */
+}
+
+/* Gaya untuk form */
+form {
+    margin: 20px 0; /* Margin atas dan bawah */
+}
+
+form input, form select, form textarea {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding di dalam input */
+    margin: 10px 0; /* Margin atas dan bawah */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Sudut melengkung */
+    font-size: 1em; /* Ukuran font input */
+    transition: border-color 0.3s; /* Transisi untuk efek */
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    outline: none; /* Menghilangkan outline */
+}
+
+/* Gaya untuk notifikasi */
+.notification {
+    padding: 15px; /* Padding di dalam notifikasi */
+    margin: 20px 0 ; /* Margin atas dan bawah */
+    border-radius: 5px; /* Sudut melengkung */
+}
+
+.notification.success {
+    background-color: #d4edda; /* Latar belakang hijau muda */
+    color: #155724; /* Warna teks hijau tua */
+}
+
+.notification.error {
+    background-color: #f8d7da; /* Latar belakang merah muda */
+    color: #721c24; /* Warna teks merah tua */
+}
+
+/* Gaya untuk loading spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Border luar */
+    border-left-color: #007bff; /* Warna border kiri */
+    border-radius: 50%; /* Bentuk bulat */
+    width: 40px; /* Lebar spinner */
+    height: 40px; /* Tinggi spinner */
+    animation: spin 1s linear infinite; /* Animasi berputar */
+}
