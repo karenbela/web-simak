@@ -15,24 +15,35 @@ body {
 }
 
 /* Header */
-header {
-    background-color: #ffffff; /* Warna latar belakang header */
-    color: #333; /* Warna teks header */
-    padding: 20px 0; /* Padding atas dan bawah */
-    text-align: center; /* Teks di tengah */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
-    position: sticky; /* Tetap di atas saat scroll */
-    top: 0; /* Posisi atas */
-    z-index: 1000; /* Di atas konten lainnya */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Warna biru */
+    padding: 10px 20px;
+    color: white;
 }
 
-header h1 {
-    font-size: 2.5em; /* Ukuran font judul */
-    color: #007bff; /* Warna judul */
+/* Kontainer logo dan teks */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Gaya logo */
+.logo {
+    height: 50px; /* Ukuran logo */
+    margin-right: 10px; /* Jarak antara logo dan teks */
+}
+
+/* Gaya teks header */
+.main-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
 }
 
 header button {
-    float: right; /* Tombol di sebelah kanan */
     background-color: #dc3545; /* Warna latar belakang tombol */
     color: white; /* Warna teks tombol */
     border: none; /* Tanpa border */
@@ -50,7 +61,6 @@ header button:hover {
 .marquee {
     white-space: nowrap; /* Mencegah teks terputus */
     overflow: hidden; /* Menghindari overflow */
-    box-sizing: border-box; /* Menghitung padding dan border dalam lebar */
     position: relative; /* Untuk efek */
     z-index: 2; /* Di atas overlay */
     background-color: #f8f9fa; /* Latar belakang teks berjalan */
@@ -88,16 +98,17 @@ header button:hover {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Bayangan teks */
 }
 
+/* Fitur */
 .feature {
     background-color: #ffffff; /* Warna latar belakang fitur */
     border-radius: 10px; /* Sudut melengkung */
-    padding: 40px; /* Padding di dalam fitur */
-    margin: 20px; /* Margin untuk jarak antar fitur */
+    padding: 20px; /* Padding di dalam fitur */
+    margin: 15px; /* Margin untuk jarak antar fitur */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan */
     transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
     display: inline-block; /* Menampilkan fitur dalam baris */
     width: calc(33% - 40px); /* Lebar fitur proporsional */
-    cursor : pointer; /* Kursor tangan saat hover */
+    cursor: pointer; /* Kursor tangan saat hover */
 }
 
 .feature:hover {
@@ -112,13 +123,13 @@ header button:hover {
 }
 
 .feature h3 {
-    font-size: 1.8em; /* Ukuran font judul fitur */
+    font-size: 1.5em; /* Ukuran font judul fitur */
     margin-bottom: 10px; /* Margin bawah */
     color: #333; /* Warna teks judul fitur */
 }
 
 .feature p {
-    font-size: 1em; /* Ukuran font deskripsi fitur */
+    font-size: 0.9em; /* Ukuran font deskripsi fitur */
     color: #666; /* Warna teks deskripsi fitur */
 }
 
@@ -133,17 +144,13 @@ footer {
 
 /* Media Queries untuk responsivitas */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em; /* Ukuran font judul lebih kecil di perangkat mobile */
+    .feature {
+        width: calc(100% - 40px); /* Lebar fitur penuh di perangkat mobile */
+        margin: 10px 0; /* Margin lebih kecil di perangkat mobile */
     }
 
     .features h2 {
         font-size: 2em; /* Ukuran font judul fitur lebih kecil di perangkat mobile */
-    }
-
-    .feature {
-        width: calc(100% - 40px); /* Lebar fitur penuh di perangkat mobile */
-        margin: 10px 0; /* Margin lebih kecil di perangkat mobile */
     }
 
     header button {
@@ -237,8 +244,9 @@ form input:focus, form select:focus, form textarea:focus {
 /* Gaya untuk notifikasi */
 .notification {
     padding: 15px; /* Padding di dalam notifikasi */
-    margin: 20px 0 ; /* Margin atas dan bawah */
-    border-radius: 5px; /* Sudut melengkung */
+    margin: 20px 0; /* Margin atas dan bawah */
+    border-radius: 5px; 
+/* Sudut melengkung */
 }
 
 .notification.success {
@@ -259,4 +267,47 @@ form input:focus, form select:focus, form textarea:focus {
     width: 40px; /* Lebar spinner */
     height: 40px; /* Tinggi spinner */
     animation: spin 1s linear infinite; /* Animasi berputar */
+}
+
+/* Tambahan untuk elemen spesifik dosen */
+.footer-container {
+    background-color: #007bff; /* Warna biru */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Teks di tengah */
+    margin-top: 20px; /* Margin atas */
+}
+/* Gaya untuk gambar dalam fitur */
+.feature img {
+    width: 150px; /* Menentukan lebar tetap untuk gambar */
+    height: 150px; /* Menentukan tinggi tetap untuk gambar */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik dan tidak terdistorsi */
+    border-radius: 5px; /* Sudut melengkung untuk gambar */
+    margin-bottom: 15px; /* Jarak antara gambar dan teks */
+}
+/* Teks berjalan */
+.marquee {
+    white-space: nowrap; /* Mencegah teks terputus */
+    overflow: hidden; /* Menghindari overflow */
+    position: relative; /* Untuk efek */
+    z-index: 2; /* Di atas overlay */
+    background-color: #f8f9fa; /* Latar belakang teks berjalan */
+    padding: 10px; /* Padding di dalam marquee */
+    font-weight: bold; /* Teks tebal */
+}
+
+.marquee p {
+    display: inline-block; /* Menampilkan teks dalam baris */
+    animation: marquee 10s linear infinite; /* Animasi teks berjalan */
+    font-size: 1.2em; /* Ukuran font teks berjalan */
+    color: #ffdd57; /* Warna teks berjalan */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Mulai dari kanan */
+    }
+    100% {
+        transform: translateX(-100%); /* Berhenti di kiri */
+    }
 }

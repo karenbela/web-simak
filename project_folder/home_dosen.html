@@ -8,33 +8,36 @@
     <title>Home Dosen - SIMAK UNKLAB</title>
 </head>
 <body>
-    <header>
-        <h1>Selamat Datang Dosen</h1>
-        <button onclick="logout()" style="float: right;">Logout</button>
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="https://www.unklab.ac.id/wp-content/uploads/2022/08/cropped-fav-150x150-1.png" alt="Logo Universitas Klabat" class="logo">
+            <h1>SIMAK UNKLAB</h1>
+        </div>
+        <button onclick="navigateTo('login.html')" style="float: right;">Logout</button>
     </header>
     <div class="marquee">Selamat datang di sistem manajemen jadwal konsultasi dosen.</div>
     <main>
         <section class="features">
             <h2>Fitur Utama</h2>
-            <div class="feature" onclick="navigateTo('jadwal_dosen.html')">
+            <div class="feature" onclick="navigateTo('jadwal.html')">
                 <h3>Jadwal Dosen</h3>
                 <p>Melihat jadwal dosen.</p>
-                <img src="jadwal-icon.png" alt="Jadwal Dosen" class="feature-icon">
+                <img src="https://scontent.fmdc1-1.fna.fbcdn.net/v/t39.30808-6/467465461_1554352571952763_5666688438948120114_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFVY4J3GDjR3Aik8a6sTmgYQ2IXxuwDeXdDYhfG7AN5dzqjfueiq8i5T2ivnnxmg_Cz5JPHOYz6ey0STzBB3tI2&_nc_ohc=BAxLEMM-3e0Q7kNvgFKuofW&_nc_zt=23&_nc_ht=scontent.fmdc1-1.fna&_nc_gid=ARxg5-M8UKnv-8SLlqjIheZ&oh=00_AYCXng9fRvLOtpGlWrkCiRgpVq19CjrbTvcirL61eZj8hA&oe=673F750C" alt="Jadwal Dosen" class="feature-icon">
             </div>
             <div class="feature" onclick="navigateTo('feedback_dosen.html')">
                 <h3>Feedback</h3>
                 <p>Melihat dan membalas feedback dari mahasiswa.</p>
-                <img src="feedback-icon.png" alt="Feedback" class="feature-icon">
+                <img src="https://scontent.fmdc1-1.fna.fbcdn.net/v/t39.30808-6/467321594_1554352545286099_7570171908019620283_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEbQjsBbmd_YSBVY8Hk6sZb5p0CjBNFUMPmnQKME0VQw0FP3na8STNX3DCBD1PWntRunKbBohovPWoOJIFmtf1c&_nc_ohc=VbU3Z0ZnYf4Q7kNvgE9Xv8u&_nc_zt=23&_nc_ht=scontent.fmdc1-1.fna&_nc_gid=ARxg5-M8UKnv-8SLlqjIheZ&oh=00_AYCDcKP7tQO3jmK1zJfdFTh8bEjQtHFAwo6UVFis_sQdkg&oe=673F7662" alt="Feedback" class="feature-icon">
             </div>
             <div class="feature" onclick="navigateTo('atur_jadwal.html')">
                 <h3>Atur Jadwal</h3>
                 <p>Atur jadwal konsultasi dengan mahasiswa.</p>
-                <img src="atur-jadwal-icon.png" alt="Atur Jadwal" class="feature-icon">
+                <img src="https://scontent.fmdc1-1.fna.fbcdn.net/v/t39.30808-6/467400802_1554352598619427_1314749381115755008_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFqv6tSu2vzBkrAcdPB2KW8D6Sl7szM9NoPpKXuzMz02sBplL-u_3qSSEpSIHU1ZoWDmWh8BeizYDPjFT5po68L&_nc_ohc=I84ZdfFnT4kQ7kNvgGhPjFR&_nc_zt=23&_nc_ht=scontent.fmdc1-1.fna&_nc_gid=ARxg5-M8UKnv-8SLlqjIheZ&oh=00_AYAax-dKjRdvsU3nn4ScwNsgGwykuvZn9WOMP5E-vSbfkQ&oe=673F677D" alt="Atur Jadwal" class="feature-icon">
             </div>
-            <div class="feature" onclick="navigateTo('about.html')">
+            <div class="feature" onclick="navigateTo('about_dosen.html')">
                 <h3>Tentang Kami</h3>
                 <p>Informasi lebih lanjut tentang sistem ini.</p>
-                <img src="about-icon.png" alt="Tentang Kami" class="feature-icon">
+                <img src="https://cdn-icons-png.freepik.com/512/11803/11803303.png" alt="Tentang Kami" class="feature-icon">
             </div>
         </section>
     </main>
@@ -53,8 +56,7 @@
             </div>
             <div id="map" class="footer-map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5983729825352!2d124.98313790744324!3d1.4169113613570974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870a95df6309dd%3A0x21d86e4847556add!2sUniversitas%20Klabat!5e0!3m2!1sen!2sid!4v1731316466676!5m2!1sen!2sid" 
-                width="20%" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-ref ```html
-referrer-when-downgrade">
+                width="20%" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>

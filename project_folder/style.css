@@ -7,9 +7,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9ecef; /* Warna latar belakang */
+    background-image: url('https://scontent.fmdc1-1.fna.fbcdn.net/v/t39.30808-6/467531496_1554368495284504_4026060353188906683_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGgLpBtyV7T1L9m77cPp64vj7ykoBSpMpuPvKSgFKkymxhmZ4b7sQJtM0LJCDV3-XVzyWz4gaiZXlihD4L1W5od&_nc_ohc=gNqOEhd5OAwQ7kNvgH3DXk-&_nc_zt=23&_nc_ht=scontent.fmdc1-1.fna&_nc_gid=ARxg5-M8UKnv-8SLlqjIheZ&oh=00_AYDIR5K97fujYjhphg5kFoPG7DwO0MCqHTzOGydx_EkM5w&oe=673F61AB'); /* Ganti dengan URL gambar latar belakang */
+    background-size: cover; /* Mengatur gambar agar menutupi seluruh latar belakang */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Mencegah gambar diulang */
+    background-attachment: fixed; /* Membuat gambar tetap saat menggulir */
     color: #333; /* Warna teks */
     line-height: 1.6; /* Jarak antar baris */
+    position: relative; /* Agar konten dapat ditempatkan dengan benar */
+
 }
 
 /* Container untuk halaman login */
